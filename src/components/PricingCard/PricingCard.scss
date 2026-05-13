@@ -38,7 +38,7 @@
         font-weight: 600;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: $color-text-muted;
+        color: $color-text;
     }
 
     &__title {
@@ -64,7 +64,7 @@
     &__period {
         font-family: $font-body;
         font-size: 14px;
-        color: $color-text-muted;
+        color: $color-text;
     }
 
     &__features {
