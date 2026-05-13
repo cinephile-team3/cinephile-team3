@@ -1,15 +1,16 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
+@use "sass:color";
 
 // ─── Navbar Styles ──────────────────────────────────────
 
 .navbar {
-  // MOBILE: Fixed at bottom
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 80px;
+  background-color: $color-bg;
   border-top: 1px solid $color-border;
   display: flex;
   align-items: center;
@@ -17,6 +18,8 @@
 
   &__container-wrapper {
     width: 100%;
+    display: flex;
+    align-items: center;
 
     ul {
       display: flex;
@@ -33,24 +36,9 @@
         font-weight: 500;
         transition: color 0.3s ease;
 
-        &:hover, &.active {
+        &:hover,
+        &.active {
           color: $color-primary;
-        }
-      }
-
-      // Active state indicator from Contact Us - Mobile_2.jpg
-      .active {
-        position: relative;
-        padding-bottom: $spacing-sm;
-
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          background-color: $color-primary;
         }
       }
     }
@@ -60,7 +48,7 @@
   &__logo-container {
     // On mobile, the logo is at the top of the page (not in the bottom nav)
     position: absolute;
-    top: calc(-100vh + 100px); 
+    top: calc(-100vh + 100px);
     left: $spacing-lg;
     padding: $spacing-lg 0;
   }
@@ -119,66 +107,4 @@
       gap: $spacing-xl;
     }
   }
-
- // SIGN IN - GET ACCESS BUTTONS  
-  &__btns {
-    display: none; // Hidden on mobile by default to keep the bottom nav clean
-
-    @include desktop {
-      display: flex;
-      align-items: center;
-      gap: $spacing-lg;
-    }
-
-    a {
-      text-decoration: none;
-      font-family: $font-title;
-      font-size: $font-size-base;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      color: $color-text-muted; // Muted style for "Sign In"
-
-      &:hover {
-        color: $color-text;
-      }
-    }
-
-    .btn__access {
-      background-color: $color-primary; // Cyan background
-      color: $color-bg; // Dark text for contrast as seen in Sign in btns.jpg
-      padding: 12px 24px;
-      border-radius: $border-radius-sm;
-      font-weight: 700;
-      line-height: 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      &:hover {
-        background-color: lighten($color-primary, 10%);
-        color: $color-bg;
-        transform: translateY(-1px);
-      }
-      
-      &:active {
-        transform: translateY(0);
-      }
-    }
-  }
 }
-
-
-// ─── Global Body Padding ──────────────────────────────
-// Prevents content from being hidden behind the fixed navbars
-body {
-  padding-bottom: 80px; 
-  background-color: $color-bg;
-  color: $color-text;
-  font-family: $font-body;
-
-  @include desktop {
-    padding-bottom: 0;
-    padding-top: 70px;
-  }
-}
-

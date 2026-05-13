@@ -4,7 +4,7 @@ import "./Navbar.scss";
 const Navbar = () => {
     return (
         <header className="navbar">
-            <nav>
+            <nav className="navbar__container-wrapper">
                 <div className="navbar__logo-container">
                     <h1 className="navbar__logo">CINEPHILE</h1>
                 </div>
@@ -20,10 +20,7 @@ const Navbar = () => {
                     </li>
 
                 </ul>
-                <div className="navbar__btns">
-                    <a href="#">Sign In</a>
-                    <a href="#" className="btn__access">Get Access</a>
-                </div>
+                
 
 
             </nav>
