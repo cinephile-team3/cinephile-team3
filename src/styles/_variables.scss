@@ -1,24 +1,25 @@
 // ─── Main colors ──────────────────────────────────────
-$color-primary:     #00E5FF;   // cyan — buttons, active links, prices
-$color-accent:      #FF00FF;   // magenta — "Best Value" badge, Premium stars
-$color-bg:          #0D0F1A;   // main dark background
-$color-bg-card:     #151826;   // card background (slightly lighter)
-$color-border:      #1E2235;   // card and input borders
-$color-text:        #FFFFFF;   // main text
-$color-text-muted:  #8B8FA8;   // secondary text (subtitles, placeholders)
+$color-primary: #00f4fe; // cyan — buttons, active links, prices
+$color-accent: #fface8; // magenta — "Best Value" badge, Premium stars
+$color-ribbon: #df00c8;
+$color-bg: #0d0b1f; // main dark background
+$color-bg-card: #151826; // card background (slightly lighter)
+$color-border: #1e2235; // card and input borders
+$color-h1: #e2e0fc; // main text
+$color-text: #7d92b1;
 
 // ─── Typography ───────────────────────────────────────
-$font-title:        'Spline Sans', sans-serif;
-$font-body:         'Be Vietnam Pro', sans-serif;
-$font-size-base:    16px;
+$font-title: "Spline Sans", sans-serif;
+$font-body: "Be Vietnam Pro", sans-serif;
+$font-size-base: 16px;
 
 // ─── Spacing ──────────────────────────────────────────
-$spacing-sm:        8px;
-$spacing-md:        16px;
-$spacing-lg:        32px;
-$spacing-xl:        64px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+$spacing-xl: 64px;
 
 // ─── Border radius ────────────────────────────────────
-$border-radius-sm:  6px;
-$border-radius-md:  12px;
-$border-radius-lg:  20px;
+$border-radius-sm: 6px;
+$border-radius-md: 12px;
+$border-radius-lg: 20px;

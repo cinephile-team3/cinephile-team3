@@ -1,3 +1,5 @@
+import './Tags.scss'
+
 const Tags = ({ label }) => {
   return (
     <span className="tag">

@@ -18,10 +18,23 @@ function App() {
       </section>
       <section className="trending__landing">
         <article className="card__landing">
-          <img src="" alt="" />
+          <img src="src\assets\card-landing.png" alt="Trending movie" />
           <Tags label="NOW TRENDING"/>
+          <h2>Interstellar Voyage</h2>
         </article>
+      </section>
 
+      <section className="kw__landing">
+        <div className="kw__landing__container">
+          <h2>Keep Watching</h2>
+          <button className="kw__landing__button">See All</button>
+        </div>
+        <article className="kw__landing__card">
+          <img src="src\assets\kw-landing.jpg" alt="Neo Tokyo poster" />
+          <h3 className="kw__card__title">Neo Tokyo 2088</h3>
+          <p className="kw__card__p">S1:E4 "The Signal"</p>
+          <div className="kw__loading__bar"></div>
+        </article>
       </section>
     </>
   );
