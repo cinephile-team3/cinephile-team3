@@ -1,3 +1,6 @@
+import '../PricingCard/PricingCard.scss'
+import PrimaryButton from '../PrimaryButton/PrimaryButton';
+
 const PricingCard = ({ label, title, price, features, buttonText, isFeatured, isBestValue }) => {
   return (
     <div className={`pricing-card ${isFeatured ? 'pricing-card--featured' : ''}`}>
@@ -19,7 +22,7 @@ const PricingCard = ({ label, title, price, features, buttonText, isFeatured, is
         ))}
       </ul>
 
-      <button className="pricing-card__btn">{buttonText}</button>
+      <PrimaryButton label={buttonText} />
 
     </div>
   );
