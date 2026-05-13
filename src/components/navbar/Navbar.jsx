@@ -1,6 +1,7 @@
 import { NavLink } from "react-router";
 import "./Navbar.scss";
- 
+import PrimaryButton from "../../components/PrimaryButton/PrimaryButton"
+
 const Navbar = () => {
     return (
         <>
@@ -20,17 +21,20 @@ const Navbar = () => {
  
                     {/* Nav links — NavLink sets .active automatically */}
                     <ul className="navbar__links">
-                        <li><NavLink to="/movies">Movies</NavLink></li>
+                        <li><NavLink to="/">Movies</NavLink></li>
                         <li><NavLink to="/pricing">Pricing</NavLink></li>
                         <li><NavLink to="/contact">Contact</NavLink></li>
                     </ul>
- 
-                    {/* Auth — desktop only */}
+
                     <div className="navbar__auth">
-                        <NavLink to="/signin" className="navbar__signin">Sign In</NavLink>
-                        <NavLink to="/get-access" className="navbar__cta">Get Access</NavLink>
+                        {/* Static Sign In Button */}
+                        <button className="navbar__signin-btn">Sign In</button>
+                        
+                        {/* Precise PrimaryButton implementation */}
+                        <div className="navbar__button-wrapper">
+                            <PrimaryButton label="Get Access" />
+                        </div>
                     </div>
- 
                 </nav>
             </header>
         </>
