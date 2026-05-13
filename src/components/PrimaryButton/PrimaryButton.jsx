@@ -2,7 +2,7 @@ import "./PrimaryButton.scss";
 
 const PrimaryButton = () => {
   return (
-    <button className="primary__button">PrimaryButton</button>
+    <button className="primary__button">Get access</button>
   )
 };
 
