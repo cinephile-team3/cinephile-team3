@@ -1,0 +1,24 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.secondary__button {
+  //reset button styles
+  all: unset;
+  //layout button
+  display: flex;
+  padding: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  //style button
+  border-radius: $border-radius-md;
+  border:1px solid $color-border;
+  background: $color-bg;
+  //text button
+  color: $color-primary;
+  text-align: center;
+  font-family: $font-title;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+}
