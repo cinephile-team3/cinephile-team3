@@ -1,8 +1,8 @@
 import "./SecondaryButton.scss";
 
-const SecondaryButton = () => {
+const SecondaryButton = ({label}) => {
   return (
-    <button className="secondary__button">View Catalog</button>
+    <button className="secondary__button">{label}</button>
   )
 };
 

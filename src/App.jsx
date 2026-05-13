@@ -5,9 +5,8 @@ import SecondaryButton from "./components/SecondaryButton/SecondaryButton";
 function App() {
   return (
     <>
-      <Navbar />
-      <PrimaryButton/>
-      <SecondaryButton/>
+      <PrimaryButton label="Get Access"/>
+      <SecondaryButton label="View Catalog"/>
     </>
   );
 }
