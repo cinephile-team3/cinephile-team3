@@ -2,12 +2,20 @@
 @use "../../styles/variables" as *;
 
 .primary__button {
+  //layout button
   display: flex;
   padding: 1rem 0;
   justify-content: center;
   align-items: center;
   align-self: stretch;
-
-  border-radius: 0.75rem;
+  //style button
+  border-radius: $border-radius-md;
   background: $color-primary;
+  //text button
+  color: $color-bg;
+  text-align: center;
+  font-family: $font-title;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
 }
