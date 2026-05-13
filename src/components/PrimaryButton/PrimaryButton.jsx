@@ -1,8 +1,8 @@
 import "./PrimaryButton.scss";
 
-const PrimaryButton = () => {
+const PrimaryButton = ({ label }) => {
   return (
-    <button className="primary__button">PrimaryButton</button>
+    <button className="primary__button">{label}</button>
   )
 };
 

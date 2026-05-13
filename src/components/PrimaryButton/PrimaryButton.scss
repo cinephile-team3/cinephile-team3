@@ -2,12 +2,14 @@
 @use "../../styles/variables" as *;
 
 .primary__button {
+  //reset button styles
+  all:unset;
   //layout button
   display: flex;
   padding: 1rem 0;
   justify-content: center;
   align-items: center;
-  align-self: stretch;
+  width: 100%;
   //style button
   border-radius: $border-radius-md;
   background: $color-primary;
