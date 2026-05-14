@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <main className="landing__container">
-        <div className="landing__section1">
           <section className="hero__landing">
             <Tags label="ULTRA HD STREAMING" />
             <h1 className="title__landing">
@@ -21,13 +20,14 @@ function App() {
             <PrimaryButton label="Get Access" />
             <SecondaryButton label="View Catalog" />
           </section>
+
+          <div className="landing__section2">
           <section className="trending__landing">
             <article className="card__landing">
               <Tags label="NOW TRENDING" />
               <h2 className="card__title">Interstellar Voyage</h2>
             </article>
           </section>
-        </div>
 
         <section className="kw__landing">
           <div className="kw__landing__container">
@@ -50,6 +50,7 @@ function App() {
             </div>
           </article>
         </section>
+        </div>
       </main>
     </>
   );

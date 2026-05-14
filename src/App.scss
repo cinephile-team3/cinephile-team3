@@ -153,13 +153,12 @@ body {
     gap: 4rem; // Espacio entre las dos columnas
   }
 
-  .landing__section1 {
-    flex: 2; // Toma más espacio (aprox 60-65%)
+  .landing__section2 {
+    flex: 1; // Toma más espacio (aprox 60-65%)
   }
 
   .kw__landing {
     flex: 1; // Toma menos espacio (aprox 35%)
-    margin-top: 2rem; // Ajusta según necesites para alinear con el texto de la izq
   }
 
   .card__landing {
