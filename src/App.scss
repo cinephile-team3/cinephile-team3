@@ -11,6 +11,13 @@ body {
   background-color: $color-bg;
   color: $color-h1;
   font-family: $font-body;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pricing, .contact {
+  padding-top: 100px;
 }
 
 .landing__container {
@@ -177,4 +184,13 @@ body {
     margin: 0;
   }
 
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main, .pricing, .contact {
+  flex: 1;
 }

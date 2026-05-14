@@ -2,12 +2,12 @@
 @use "../../styles/variables" as *;
 
 .contact {
-  min-height: calc(100vh - 140px); // accounting for navbars
+  flex: 1;
   display: flex;
-  margin: 0;
   align-items: center;
   justify-content: center;
-  padding-top: 80px;
+  padding-top: 120px;
+  padding-bottom: $spacing-xl;
   background-color: $color-bg;
 
   &__container {
@@ -29,6 +29,7 @@
   &__mobile-text {
     text-align: left;
     margin-bottom: $spacing-md;
+    padding: 0 $spacing-md;
     h1 {
         color: $color-primary;
         font-family: $font-title;

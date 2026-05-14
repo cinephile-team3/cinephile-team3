@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import PrimaryButton from "./components/PrimaryButton/PrimaryButton";
 import SecondaryButton from "./components/SecondaryButton/SecondaryButton";
 import Tags from "./components/Tags/Tags";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
