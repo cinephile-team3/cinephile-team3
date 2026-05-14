@@ -1,0 +1,86 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-lg $spacing-md;
+  border-top: 1px solid $color-border;
+  padding-bottom: 80px;
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__logo {
+    font-family: $font-title;
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-primary;
+  }
+
+  &__tagline {
+    font-family: $font-body;
+    font-size: 11px;
+    color: $color-text;
+    letter-spacing: 0.05em;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-md;
+
+    a {
+      font-family: $font-body;
+      font-size: 12px;
+      color: $color-text;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__icons {
+    display: none;
+  }
+
+  &__icon {
+    background: none;
+    border: none;
+    color: $color-text;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-md $spacing-xl;
+    padding-bottom: $spacing-md;
+
+    &__brand {
+      flex-direction: row;
+      align-items: center;
+      gap: $spacing-sm;
+    }
+
+    &__icons {
+      display: flex;
+      gap: $spacing-md;
+    }
+  }
+}
