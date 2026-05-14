@@ -1,6 +1,18 @@
 @use "../src/styles/variables" as *;
 @use "../src/styles/mixins" as *;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-h1;
+  font-family: $font-body;
+}
+
 .landing__container {
   margin: auto 1.5rem;
 }
