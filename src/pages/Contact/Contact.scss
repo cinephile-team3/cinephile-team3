@@ -1,1 +1,169 @@
-@use '../../styles/variables' as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.contact {
+  min-height: calc(100vh - 140px); // accounting for navbars
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  background-color: $color-bg;
+
+  &__container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+
+  // --- Info Section ---
+  &__info {
+    .contact__overline, .contact__title, .contact__description {
+        display: none; // Hidden on mobile to match Mobile_2 mockup
+    }
+  }
+
+  &__mobile-text {
+    text-align: left;
+    margin-bottom: $spacing-md;
+    h1 {
+        color: $color-primary;
+        font-family: $font-title;
+        font-size: 32px;
+        margin-bottom: $spacing-sm;
+    }
+    p {
+        color: $color-h1;
+        opacity: 0.8;
+        font-family: $font-body;
+    }
+  }
+
+  // --- Form Card ---
+  &__card {
+    background-color: $color-bg-card;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-lg;
+    padding: $spacing-lg;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+
+    label {
+      color: $color-primary;
+      font-family: $font-body;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    input, textarea {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid $color-border;
+      border-radius: $border-radius-sm;
+      padding: 16px;
+      color: white;
+      font-family: $font-body;
+      
+      &::placeholder {
+        color: $color-text;
+        font-family: $font-body;
+        opacity: 0.5;
+      }
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: none;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    align-items: center;
+  }
+
+  &__security {
+    color: $color-text;
+    font-family: $font-body;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+  }
+
+  &__button-wrapper {
+    width: 100%; // PrimaryButton is 100% width on mobile
+  }
+
+  // --- Desktop Layout Fixes ---
+  @include desktop {
+    &__container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__info {
+      flex: 1;
+      .contact__overline { 
+        display: block;
+        color: $color-h1;
+        font-family: $font-title; // Apply Spline Sans
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.2em;
+      }
+      .contact__title { 
+        display: block; 
+        color: $color-h1;
+        font-family: $font-title;
+        font-weight: 800; 
+        font-size: 64px; 
+        line-height: 1.1; 
+        margin: $spacing-md 0;
+      }
+      .contact__description { 
+        display: block; 
+        max-width: 400px;
+        color: $color-text;
+        line-height: 1.6;
+        font-family: $font-body;
+      }
+    }
+
+    &__mobile-text {
+        display: none;
+        font-family: $font-body;
+    }
+
+    &__card {
+      flex: 1;
+      max-width: 600px;
+      padding: $spacing-xl;
+    }
+
+    &__form-row {
+      display: flex;
+      gap: $spacing-md;
+      .contact__field { flex: 1; }
+    }
+
+    &__footer {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__button-wrapper {
+      width: 180px; // Fixed width for desktop "Send"
+    }
+  }
+}
