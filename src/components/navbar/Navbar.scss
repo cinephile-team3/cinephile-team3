@@ -1,54 +1,100 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
 
-// ─── Navbar Styles ──────────────────────────────────────
 
+.navbar__logo {
+  color: $color-primary !important; // Forces the Cyan from variables
+  font-family: $font-title !important; // Forces Spline Sans
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+  line-height: 1;
+}
+// ─── Mobile Logo Strip ──────────────────────────────────
+.navbar__mobile-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: $color-bg;
+  display: flex;
+  align-items: center;
+  padding: 0 $spacing-lg;
+  z-index: 1001;
+  border-bottom: 1px solid $color-border;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+// ─── Main Navbar ────────────────────────────────────────
 .navbar {
-  // MOBILE: Fixed at bottom
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 70px;
+  background-color: $color-bg;
   border-top: 1px solid $color-border;
-  display: flex;
-  align-items: center;
   z-index: 1000;
 
   &__container-wrapper {
+    display: flex;
+    height: 100%;
     width: 100%;
+    align-items: center;
+  }
 
-    ul {
+  &__logo-container, &__auth {
+    display: none; // Hidden on mobile per image_ea6321.png
+  }
+
+
+  &__links {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      flex: 1;
       display: flex;
-      justify-content: space-around;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    }
 
-      a {
-        text-decoration: none;
-        color: $color-text;
-        font-family: $font-title;
-        font-size: $font-size-base;
-        font-weight: 500;
-        transition: color 0.3s ease;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: $color-text;
+      font-family: $font-title;
+      font-size: 16px;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.2s ease;
 
-        &:hover, &.active {
-          color: $color-primary;
-        }
+      &:hover {
+        color: $color-primary;
       }
 
-      // Active state indicator from Contact Us - Mobile_2.jpg
-      .active {
-        position: relative;
-        padding-bottom: $spacing-sm;
+      &.active {
+        color: $color-primary;
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: 0;
-          left: 0;
-          width: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80%; // Matches underline in image_ea6321.png
           height: 2px;
           background-color: $color-primary;
         }
@@ -56,129 +102,68 @@
     }
   }
 
-  // BRAND LOGO
-  &__logo-container {
-    // On mobile, the logo is at the top of the page (not in the bottom nav)
-    position: absolute;
-    top: calc(-100vh + 100px); 
-    left: $spacing-lg;
-    padding: $spacing-lg 0;
-  }
-
-  &__logo {
-    color: $color-primary;
-    font-size: 20px;
-    font-family: $font-title;
-    font-weight: 700;
-    line-height: 28px;
-    text-transform: uppercase;
-    margin: 0;
-    word-wrap: break-word;
-  }
-
-  // ─── Tablet Mixin ───────────────────────────────────
-  @include tablet {
-    height: 70px;
-    padding: 0 $spacing-xl;
-
-    &__container-wrapper {
-      ul {
-        justify-content: flex-end;
-        gap: $spacing-lg;
-      }
-    }
-  }
-
-  // ─── Desktop Mixin ──────────────────────────────────
+  // ─── Desktop Adjustments ──────────────────────────────
   @include desktop {
-    // Move navbar to top for Desktop view
     top: 0;
     bottom: auto;
+    height: 80px;
     border-top: none;
     border-bottom: 1px solid $color-border;
-    background-color: rgba($color-bg, 0.9);
-    backdrop-filter: blur(10px);
 
     &__container-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       max-width: 1440px;
       margin: 0 auto;
-      padding: 0 $spacing-xl;
+      padding: 0 $spacing-lg;
+      justify-content: space-between;
     }
 
     &__logo-container {
-      // Re-integrate logo into the header flex layout
-      position: static;
-      padding: 0;
+      display: flex;
     }
 
-    &__container-wrapper ul {
-      justify-content: flex-end;
+    &__links {
+      width: auto;
+      height: 100%;
       gap: $spacing-xl;
+
+      li { flex: none; }
+      
+      a { 
+        width: auto; 
+        padding: 0 10px; 
+        // Ensures the hover trigger covers the 80px height
+        height: 100%;
+
+        &.active::after { 
+          width: 100%; 
+          bottom: 0;
+        }
+      }
     }
-  }
 
- // SIGN IN - GET ACCESS BUTTONS  
-  &__btns {
-    display: none; // Hidden on mobile by default to keep the bottom nav clean
-
-    @include desktop {
+    &__auth {
       display: flex;
       align-items: center;
       gap: $spacing-lg;
     }
 
-    a {
-      text-decoration: none;
+    &__signin-btn {
+      all: unset;
+      cursor: pointer;
+      color: $color-text;
       font-family: $font-title;
-      font-size: $font-size-base;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      color: $color-text; // Muted style for "Sign In"
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.2s ease;
 
       &:hover {
-        color: $color-text;
+        color: $color-primary;
       }
     }
 
-    .btn__access {
-      background-color: $color-primary; // Cyan background
-      color: $color-bg; // Dark text for contrast as seen in Sign in btns.jpg
-      padding: 12px 24px;
-      border-radius: $border-radius-sm;
-      font-weight: 700;
-      line-height: 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      &:hover {
-        background-color: lighten($color-primary, 10%);
-        color: $color-bg;
-        transform: translateY(-1px);
-      }
+    &__button-wrapper {
+      width: 180px;
       
-      &:active {
-        transform: translateY(0);
-      }
     }
   }
 }
-
-
-// ─── Global Body Padding ──────────────────────────────
-// Prevents content from being hidden behind the fixed navbars
-body {
-  padding-bottom: 80px; 
-  background-color: $color-bg;
-  color: $color-text;
-  font-family: $font-body;
-
-  @include desktop {
-    padding-bottom: 0;
-    padding-top: 70px;
-  }
-}
-
