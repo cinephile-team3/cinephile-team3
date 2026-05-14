@@ -1,4 +1,24 @@
 @use "../src/styles/variables" as *;
+@use "../src/styles/mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-h1;
+  font-family: $font-body;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pricing, .contact {
+  padding-top: 100px;
+}
 
 * {
   margin: 0;
@@ -65,7 +85,7 @@ body {
   border-radius: 1rem;
   border: 1px solid $color-border;
   color: $color-h1;
-  margin: 16rem auto 5rem auto;
+  margin: 5rem auto;
 }
 
 .card__title {
@@ -150,6 +170,39 @@ body {
     border-radius: $border-radius-lg 0 0 $border-radius-lg;
 }
 
+@include desktop {
+  .landing__container {
+    margin: 5rem; 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .landing__section2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap:5rem;
+    padding-top: 100px;
+  }
+
+  .hero__landing{
+    padding-top: 100px;
+  }
+
+  .kw__landing {
+    flex: 1; 
+  }
+
+  .kw__landing__card{
+    margin-top: 2rem;
+  }
+
+  .card__landing {
+    margin: 0;
+  }
+
 #root {
   min-height: 100vh;
   display: flex;
@@ -159,4 +212,5 @@ body {
 
 main, .pricing, .contact {
   flex: 1;
+}
 }
