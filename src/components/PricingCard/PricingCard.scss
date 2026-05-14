@@ -31,15 +31,15 @@
 
     &__badge {
         position: absolute;
-        top: 16x;
-        right: -12x;
+        top: 30px;
+        right: -35px;
         background-color: $color-ribbon;
         color: white;
         font-family: $font-body;
         font-size: 10px;
         font-weight: 700;
         letter-spacing: 0.08em;
-        padding: 6px 24px;
+        padding: 6px 50px;
         transform: rotate(45deg);
     }
 
