@@ -1,8 +1,8 @@
+import "./App.scss";
 import Navbar from "./components/navbar/Navbar";
 import PrimaryButton from "./components/PrimaryButton/PrimaryButton";
 import SecondaryButton from "./components/SecondaryButton/SecondaryButton";
 import Tags from "./components/Tags/Tags";
-import "./App.scss"
 
 function App() {
   return (
