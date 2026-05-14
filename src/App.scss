@@ -1,4 +1,5 @@
 @use "../src/styles/variables" as *;
+@use "../src/styles/mixins" as *;
 
 .landing__container {
   margin: auto 1.5rem;
@@ -46,7 +47,7 @@
   border-radius: 1rem;
   border: 1px solid $color-border;
   color: $color-h1;
-  margin: 16rem auto 5rem auto;
+  margin: 5rem auto;
 }
 
 .card__title {
@@ -129,4 +130,27 @@
     height: 0.375rem;
     background: linear-gradient(90deg, $color-primary 0%, $color-ribbon 100%);
     border-radius: $border-radius-lg 0 0 $border-radius-lg;
+}
+
+@include desktop {
+  .landing__container {
+    margin: 5rem; // He quitado el auto lateral para que no choque con el flex
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; // Para que no se estiren verticalmente de forma rara
+    gap: 4rem; // Espacio entre las dos columnas
+  }
+
+  .landing__section1 {
+    flex: 2; // Toma más espacio (aprox 60-65%)
+  }
+
+  .kw__landing {
+    flex: 1; // Toma menos espacio (aprox 35%)
+    margin-top: 2rem; // Ajusta según necesites para alinear con el texto de la izq
+  }
+
+  .card__landing {
+    margin: 4rem 0; // Mucho más moderado para que se vea junto a la otra sección
+  }
 }
