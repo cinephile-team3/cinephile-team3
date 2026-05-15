@@ -37,23 +37,37 @@ npm run dev
 ```
 
 ## 📁 Project Structure
-src/
-components/
-navbar/         # Navigation bar
-Footer/         # Footer
-PricingCard/    # Pricing plan card
-PrimaryButton/  # Primary CTA button
-SecondaryButton/# Secondary CTA button
-Tags/           # Chip/tag component
-pages/
-App/            # Home / Landing page
-Pricing/        # Pricing plans page
-Contact/        # Contact form page
-styles/
-_variables.scss # Global design tokens
-_mixins.scss    # Responsive breakpoints
-config/
-router.jsx      # Route configuration
+
+cinephile-team3/
+└── src/
+    ├── components/
+    │   ├── Footer/
+    │   │   └── Footer.jsx
+    │   ├── navbar/
+    │   │   ├── Navbar.jsx
+    │   │   └── Navbar.scss
+    │   ├── PricingCard/
+    │   │   ├── PricingCard.jsx
+    │   │   └── PricingCard.scss
+    │   ├── PrimaryButton/
+    │   ├── SecondaryButton/
+    │   ├── Tags/
+    │   └── ContactForm.jsx
+    ├── config/
+    │   └── router.jsx
+    ├── pages/
+    │   ├── Contact/
+    │   │   ├── Contact.jsx
+    │   │   └── Contact.scss
+    │   └── Pricing/
+    │       ├── Pricing.jsx
+    │       └── Pricing.scss
+    ├── styles/
+    │   ├── _variables.scss
+    │   └── _mixins.scss
+    ├── App.jsx
+    ├── App.scss
+    └── main.jsx
 
 ## 📱 Pages
 
