@@ -38,7 +38,7 @@ npm run dev
 
 ## 📁 Project Structure
 
-cinephile-team3/
+```pcinephile-team3/
 └── src/
     ├── components/
     │   ├── Footer/
@@ -68,6 +68,7 @@ cinephile-team3/
     ├── App.jsx
     ├── App.scss
     └── main.jsx
+```
 
 ## 📱 Pages
 
