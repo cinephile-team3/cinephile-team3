@@ -1,5 +1,6 @@
 import PricingCard from '../../components/PricingCard/PricingCard'
 import '../Pricing/Pricing.scss'
+import Tags from '../../components/Tags/Tags'
 
 const plansData = [
     {
@@ -49,6 +50,7 @@ function Pricing() {
   return (
     <div className='pricing'>
         <div className='pricing__header'>
+            <Tags label="PRICING" />
             <h1 className='pricing__title'>CHOOSE YOUR EXPERIENCE</h1>
             <p className='pricing__subtitle'>Precision-engineered streaming for the ultimate cinematic immersion. Select the tier that matches your passion.
             </p>

@@ -7,7 +7,9 @@ const Navbar = () => {
         <>
             {/* ── Mobile only: top logo strip ── */}
             <div className="navbar__mobile-header">
-                <h1 className="navbar__logo">CINEPHILE</h1>
+                <NavLink to="/">
+                    <h1 className="navbar__logo">CINEPHILE</h1>
+                </NavLink>
             </div>
  
             {/* ── Mobile: bottom tab bar  |  Desktop: full top header ── */}
@@ -16,7 +18,9 @@ const Navbar = () => {
  
                     {/* Logo — desktop only (rendered above on mobile) */}
                     <div className="navbar__logo-container">
-                        <h1 className="navbar__logo">CINEPHILE</h1>
+                        <NavLink to="/">
+                            <h1 className="navbar__logo">CINEPHILE</h1>
+                        </NavLink>
                     </div>
  
                     {/* Nav links — NavLink sets .active automatically */}
@@ -42,4 +46,3 @@ const Navbar = () => {
 };
  
 export default Navbar;
- 

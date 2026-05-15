@@ -121,6 +121,11 @@
       display: flex;
     }
 
+    &__logo-container a,
+    .navbar__mobile-header a {
+      text-decoration: none;
+    }
+
     &__links {
       width: auto;
       height: 100%;

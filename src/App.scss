@@ -20,6 +20,25 @@ body {
   padding-top: 100px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-h1;
+  font-family: $font-body;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pricing, .contact {
+  padding-top: 100px;
+}
+
 .landing__container {
   margin: auto 1.5rem;
 }
@@ -30,6 +49,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 80px;
   gap: 1rem;
 }
 
