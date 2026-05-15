@@ -84,6 +84,14 @@ npm run dev
 | Nayeli Córdova Mendoza | Developer |
 | Chiara Di Maio | Product Owner & Developer |
 
+## 🗺️ User Flow
+
+[View User Flow on Figma](https://www.figma.com/board/86i97IPlAitLocwPyAX9ka/User-flow-Cinephile?node-id=0-1&p=f&t=4v4CJDoJqovdUA7S-0)
+
+## 🎨 Presentation
+
+[View Presentation on Canva](https://canva.link/ia5xlyavi0ci8rw)
+
 ## 📄 License
 
 This project was developed for educational purposes within the FemCoders Bootcamp.
